@@ -1,6 +1,3 @@
-// ==========================================
-// 1. SINGLY LINKED LIST (singly_ll.cpp)
-// ==========================================
 #include <iostream>
 using namespace std;
 
