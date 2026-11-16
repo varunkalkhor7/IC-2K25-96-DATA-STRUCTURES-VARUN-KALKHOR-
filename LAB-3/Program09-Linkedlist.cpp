@@ -13,8 +13,6 @@ private:
 
 public:
     SinglyLinkedList() : head(nullptr) {}
-
-    // Get length of list
     int length() {
         int count = 0;
         Node* temp = head;
@@ -25,7 +23,6 @@ public:
         return count;
     }
 
-    // Insert at 1-based position
     void insertAtPos(int val, int pos) {
         int len = length();
         if (pos < 1 || pos > len + 1) {
@@ -46,7 +43,6 @@ public:
         temp->next = newNode;
     }
 
-    // Delete at 1-based position
     void deleteAtPos(int pos) {
         if (!head) {
             cout << "List is empty!\n";
@@ -72,7 +68,6 @@ public:
         delete nodeToDelete;
     }
 
-    // Reverse list iteratively
     void reverse() {
         Node* prev = nullptr;
         Node* current = head;
@@ -86,7 +81,6 @@ public:
         head = prev;
     }
 
-    // Concatenate another list to the end
     void concatenate(SinglyLinkedList& list2) {
         if (!head) {
             head = list2.head;
@@ -97,10 +91,9 @@ public:
             }
             temp->next = list2.head;
         }
-        list2.head = nullptr; // Transfer ownership
+        list2.head = nullptr; 
     }
 
-    // Display
     void display() {
         Node* temp = head;
         while (temp) {
@@ -117,11 +110,11 @@ int main() {
     cout << "--- Singly Linked List Operations ---\n";
     list1.insertAtPos(10, 1);
     list1.insertAtPos(30, 2);
-    list1.insertAtPos(20, 2); // List 1: 10 -> 20 -> 30
+    list1.insertAtPos(20, 2); 
     cout << "List 1 after insertions: ";
     list1.display();
 
-    list1.deleteAtPos(2); // Deletes 20
+    list1.deleteAtPos(2); 
     cout << "List 1 after deleting at pos 2: ";
     list1.display();
 
